@@ -1,1 +1,3 @@
 icon svgs -  https://icomoon.io/
+
+cubic bezier - https://cubic-bezier.com/
