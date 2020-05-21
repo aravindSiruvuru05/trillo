@@ -17,17 +17,17 @@ Grey dark 3: #999
 */
 
 :root {
-    --color-primary: #eb2f64;
+    --color-primary: #eb2f64;   
     --color-primary-light: #FF3366;
     --color-primary-dark: #BA265D;
 
     --color-grey-light-1: #faf9f9;
-    --color-grey-light-2: #f4f2f2;
+    --color-grey-light-2: #f4f2f2; 
     --color-grey-light-3: #e6e3e3;
     --color-grey-light-4: #ccc;
 
-    --color-grey-dark-3: rgb(82, 82, 82);
-    --color-grey-dark-2: #777;
+    --color-grey-dark-3: #333;
+    --color-grey-dark-2: rgb(100, 94, 94);
     --color-grey-dark-1: #999;
 
     --shadow-dark: 0 3rem 6rem rgba(0,0,0,.3);
@@ -56,8 +56,9 @@ html {
 
 body {
     font-family: 'open-Sans', sans-serif;
+    
     font-weight: 400;
-    line-height: 1.6;
+    line-height: 1.6; 
     color: var(--color-grey-dark-1);
     background-image: linear-gradient(to right bottom, 
                     var(--color-primary-light), var(--color-primary-dark));
