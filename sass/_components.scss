@@ -8,13 +8,19 @@
 
 ///////////////////////////////////////////
 //searchbox
-
+ 
 .search {
     flex: 0 0 40%;
 
     display: flex; 
     align-items: center;
     justify-content: center;
+
+    @media only screen and (max-width: $bp-smallest) {
+        order: 1;
+        background-color: var(--color-grey-light-2); 
+        flex: 0 0 100%;  // does not shrink does not grow takes width of 100% parent
+    }
 
     &__input {
 
@@ -47,6 +53,8 @@
     &__button {
         background-color: var(--color-grey-light-2);
         border: none;
+        display: flex; 
+        align-items: center;    
 
         &:focus {
             outline: none;
@@ -77,9 +85,9 @@
     color: var(--color-grey-dark-2);
 
     // direct children are selected here, icon box and user  to write for both at same time
-    & > * {
-        padding: 0 2rem;
-        cursor: pointer;
+    & > * {  
+        padding: 0 1rem;   
+        cursor: pointer;    
         height: 100%;
 
         display: flex;
@@ -122,7 +130,7 @@
         height: 3.75rem;
         width: 3.75rem;
         border-radius: 50%; 
-        margin: 0 1rem;
+        margin: 0 .5rem; 
     }
 }
 
@@ -136,6 +144,10 @@
         margin-top: 3.5rem;  
         list-style: none; 
         font-size: 1.4rem;
+        @media only screen and (max-width: $bp-medium) {
+            display: flex;
+            margin-top: 0;
+          } 
         
     }
 
@@ -144,7 +156,13 @@
 
         &:not(:last-child) {
             margin-bottom: .5rem;
+            @media only screen and (max-width: $bp-medium) { margin-bottom: 0; } 
         } 
+
+        @media only screen and (max-width: $bp-medium) {
+            flex: 1;
+
+          } 
 
         &::before {    
             content: "";
@@ -188,13 +206,23 @@
         display: flex;
         align-items: center;
 
+        @media only screen and (max-width: $bp-small) {
+            flex-direction: column; 
+            padding: .5rem 2rem; 
+         } 
+
     }
 
     &__icon {
         width: 1.75rem; 
         height: 1.75rem; 
         margin-right: 2rem;
-        fill: currentColor;    
+        fill: currentColor;  
+
+        
+        @media only screen and (max-width: $bp-medium) {
+            margin-right: 0;
+         } 
     }
 }
 
@@ -206,6 +234,11 @@
     text-align: center;
     padding: 2.5rem;
     color: var(--color-grey-light-1);
+    @media only screen and (max-width: $bp-medium) {
+        display: none;
+   
+      } 
+    
 }
 
 
@@ -229,6 +262,7 @@
     display: flex; 
     align-items: center;
     background-color: white;
+    flex-wrap: wrap;
 
     &__heading {
         font-size: 2.25rem;
@@ -236,14 +270,27 @@
         text-transform: uppercase;
         letter-spacing: 1px;   
         padding: 1.8rem 1rem 1.2rem 2rem;  
+
+        @media only screen and (max-width: $bp-small) {
+            font-size: 1.8rem; 
+            letter-spacing: .5px;     
+        padding: 1.5rem .5rem 1rem 1.5rem;  
+        margin-right: auto;    
+         } 
+
     }
 
     &__stars {
         //flex: 1 ; // the star element expand its self ... but we need to create space after stars so that when we hover the affect is on the element not all the expanded element
        margin-right: auto;
        display: flex; //the child elements of this cless i.e svg icons act as inline elements . ao they alingn temsels at top line of this stars div .... by making this div as a flex ... the child elements become flex elemets and parent adjust to required height of child elements  and aign crtly at the center
-    }                 // else they align to top line leving some space to down and do not align perfectly to center
-   
+                        // else they align to top line leving some space to down and do not align perfectly to center
+     @media only screen and (max-width: $bp-smallest) { 
+     order: 1; 
+     margin-left: 3rem;  
+     margin-bottom: .5rem;     
+     } 
+    }                 
     
     &__icon-star, 
     &__icon-location { 
@@ -276,15 +323,23 @@
         align-items: center;
         justify-content: center;
         flex-direction: column;
+        @media only screen and (max-width: $bp-small) {
+          padding: 0 1.5rem;     
+         } 
+        
 
         &-average {
                 font-size: 2.25rem;
                 font-weight: 300;
+            @media only screen and (max-width: $bp-small) {
+              font-size: 1.8rem;     
+           } 
         }
         &-count {
             margin-top: -5px;    
             font-size: .8rem;
             text-transform: uppercase;
+         
         }
 
     }
@@ -457,6 +512,9 @@
         margin-right: auto;
     }
 
+    &__friends {
+        display: flex;
+    }
     &__photo {
         box-sizing: content-box;
         height: 4rem;
@@ -465,9 +523,9 @@
         border: 3px solid white;
 
         &:not(:last-child) {
-            margin-right: -1.5rem;   
+            margin-right: -2rem;    
         }
-    }
+    }      
 }
 
 ///////////////////////////////////////////////////
