@@ -79,6 +79,7 @@ body {
   justify-content: space-between; }
 
 .hotel-view {
+  word-spacing: .08rem;
   background-color: var(--color-grey-light-3);
   color: var(--color-grey-dark-2);
   flex: 1; }
@@ -103,7 +104,16 @@ body {
   flex: 1;
   display: flex;
   flex-direction: column;
-  align-items: center; }
+  align-items: center;
+  justify-content: stretch; }
+
+.cta {
+  height: 10rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  color: var(--color-grey-dark-2); }
 
 .logo {
   height: 3.25rem;
@@ -277,6 +287,44 @@ body {
       font-size: .8rem;
       text-transform: uppercase; }
 
+.btn {
+  border: none;
+  padding: 1rem 3rem;
+  border-radius: 10rem;
+  background-image: linear-gradient(to right, var(--color-primary-light), var(--color-primary-dark));
+  color: white;
+  width: 18rem;
+  height: 4rem;
+  font-size: 1.5rem;
+  position: relative; }
+  .btn .btn--book-now {
+    position: absolute;
+    left: 6rem;
+    top: -2rem;
+    opacity: 0;
+    transition: all .3s; }
+  .btn .btn--rooms-left {
+    position: absolute;
+    left: 3.8rem;
+    top: 1rem;
+    opacity: 1;
+    transition: all .3s; }
+  .btn:hover {
+    background-image: linear-gradient(to left, var(--color-primary-light), var(--color-primary-dark)); }
+    .btn:hover .btn--book-now {
+      position: absolute;
+      left: 6rem;
+      top: 1rem;
+      opacity: 1; }
+    .btn:hover .btn--rooms-left {
+      position: absolute;
+      left: 3.8rem;
+      top: 3rem;
+      opacity: 0; }
+  .btn:focus {
+    outline: none;
+    animation: pulsate 1s infinite; }
+
 .btn-inline {
   border: none;
   color: var(--color-primary);
@@ -294,7 +342,7 @@ body {
   .btn-inline:hover {
     color: var(--color-grey-dark-1); }
   .btn-inline:hover span {
-    margin-left: 1rem; }
+    margin-left: 1.2rem; }
   .btn-inline:focus {
     outline: none;
     animation: pulsate 1s infinite; }
@@ -389,3 +437,7 @@ body {
     top: -8rem;
     left: -.5rem;
     font-size: 18rem; }
+
+.cta__book-now {
+  font-weight: 100;
+  font-size: 1.7rem; }
