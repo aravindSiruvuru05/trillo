@@ -274,7 +274,7 @@ body {
   z-index: 10;
   display: flex;
   align-items: center; }
-  @media only screen and (max-width: 37.5em) {
+  @media only screen and (max-width: 56.25em) {
     .side-nav__link:link, .side-nav__link:visited {
       flex-direction: column;
       padding: .5rem 2rem; } }
